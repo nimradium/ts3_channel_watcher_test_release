@@ -15,7 +15,7 @@ for:
   - matrix:	
       only:	
         - image: Ubuntu1804	
-        - platform: x64	
+          platform: x64	
     build_script:	
         - echo "ubuntu x64"
         - sh: gcc -m64 -I../include -c -O2 -Wall -fPIC -DLINUX plugin.cpp	
@@ -23,7 +23,7 @@ for:
   - matrix:	
       only:	
         - image: Ubuntu1804	
-        - platform: x86	
+          platform: x86	
     build_script:	
         - echo "ubuntu x86"
         - sh: gcc -m32 -I../include -c -O2 -Wall -fPIC -DLINUX plugin.cpp	
