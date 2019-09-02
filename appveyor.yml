@@ -16,7 +16,7 @@ for:
       only:	
         - image: Ubuntu1804	
         - platform: x64	
-      build_script:	
+    build_script:	
         - echo "ubuntu x64"
         - sh: gcc -m64 -I../include -c -O2 -Wall -fPIC -DLINUX plugin.cpp	
         - sh: gcc -m64 -o ChannelWatcher_x64.so -shared plugin.o	
@@ -24,14 +24,14 @@ for:
       only:	
         - image: Ubuntu1804	
         - platform: x86	
-      build_script:	
+    build_script:	
         - echo "ubuntu x86"
         - sh: gcc -m32 -I../include -c -O2 -Wall -fPIC -DLINUX plugin.cpp	
         - sh: gcc -m32 -o ChannelWatcher_x86.so -shared plugin.o
   - matrix:
       only:
         - image: Visual Studio 2019
-      build_script:
+    build_script:
         - echo "vs2019"
         - msbuild "ts3_channel_watcher.sln" /verbosity:Minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 deploy:
