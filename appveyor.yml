@@ -13,7 +13,7 @@ install:
   - nuget restore
 build:
    project: src/ts3_channel_watcher.sln
-   verbosity: Detailed
+   verbosity: Minimal
 for:	
   - matrix:	
       only:	
