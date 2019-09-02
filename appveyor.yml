@@ -29,9 +29,8 @@ for:
   - matrix:
       only:
         - image: Visual Studio 2019
-    build:
-      project: src/ts3_channel_watcher.sln
-      verbosity: Detailed
+    build_script:
+      - cmd: msbuild "ts3_channel_watcher.sln" /verbosity:Minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 deploy:
 - provider: GitHub
   auth_token:
