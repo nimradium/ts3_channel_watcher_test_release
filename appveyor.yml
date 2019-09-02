@@ -11,9 +11,6 @@ cache: src/packages -> **\src\packages.config
 install:
   - cd src
   - nuget restore
-build:
-  project: src/ts3_channel_watcher.sln
-  verbosity: Detailed
 for:	
   - matrix:	
       only:	
@@ -29,6 +26,12 @@ for:
     build_script:	
       - sh: gcc -m32 -I../include -c -O2 -Wall -fPIC -DLINUX plugin.cpp	
       - sh: gcc -m32 -o ChannelWatcher_x86.so -shared plugin.o
+  - matrix:
+      only:
+        - image: Visual Studio 2019
+    build:
+      project: src/ts3_channel_watcher.sln
+      verbosity: Detailed
 deploy:
 - provider: GitHub
   auth_token:
