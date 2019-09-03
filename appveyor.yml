@@ -13,6 +13,8 @@ install:
   - nuget restore
 environment:
   out: src\$(platform)\$(configuration)\*.dll
+before_build:
+  - sh: mkdir $(platform)
 build:
    project: src/ts3_channel_watcher.sln
    verbosity: Minimal
