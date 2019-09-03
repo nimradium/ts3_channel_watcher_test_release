@@ -12,7 +12,7 @@ install:
   - cd src
   - nuget restore
 environment:
-  out: $(APPVEYOR_BUILD_FOLDER)\src\$(platform)\$(configuration)\*.dll
+  out: src\$(platform)\$(configuration)\*.dll
 build:
    project: src/ts3_channel_watcher.sln
    verbosity: Minimal
