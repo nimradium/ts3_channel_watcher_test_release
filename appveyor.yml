@@ -12,7 +12,7 @@ install:
   - cd src
   - nuget restore
 environment:
-  out: $(platform)\*.dll
+  out: $(platform)\$(configuration)\*.dll
 build:
    project: src/ts3_channel_watcher.sln
    verbosity: Minimal
